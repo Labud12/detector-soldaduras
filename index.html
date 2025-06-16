@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detector de Soldaduras</title>
+    <style>
+        body {
+            background-color: #1E3A8A;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        nav a {
+            color: #93C5FD;
+            margin: 0 15px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #2563EB;
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        input[type=file] {
+            margin: 15px 0;
+            padding: 8px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: white;
+            color: #1E3A8A;
+        }
+        input[type=submit] {
+            background-color: #3B82F6;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type=submit]:hover {
+            background-color: #60A5FA;
+        }
+        .error {
+            margin-top: 20px;
+            color: #F87171;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/quienes-somos">Quiénes Somos</a>
+    </nav>
+
+    <h1>Detector de Soldaduras con IA</h1>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required />
+        <br />
+        <input type="submit" value="Analizar Imagen" />
+    </form>
+
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>

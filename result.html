@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resultado de la Soldadura</title>
+    <style>
+        body {
+            background-color: #1E3A8A;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        nav a {
+            color: #93C5FD;
+            margin: 0 15px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .resultado {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 40px;
+        }
+        img {
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 35px;
+            background-color: #2563EB;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        a.button:hover {
+            background-color: #3B82F6;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/quienes-somos">Quiénes Somos</a>
+    </nav>
+
+    <h1>Resultado del análisis</h1>
+    <img src="data:image/png;base64,{{ img_data }}" alt="Imagen subida" />
+    <div class="resultado">{{ resultado }}</div>
+
+    <a href="/" class="button">Analizar otra imagen</a>
+</body>
+</html>
